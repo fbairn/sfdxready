@@ -6,3 +6,5 @@ RUN apk add --no-cache git
 RUN apk add openssh
 
 RUN npm install sfdx-cli --global
+
+RUN apk add jq
