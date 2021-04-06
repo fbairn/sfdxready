@@ -1,5 +1,8 @@
 FROM node:lts-alpine
 
-run npm install sfdx-cli --global
-# RUN sfdx force
-CMD sfdx --version
+RUN apk add --update
+RUN apk add --update ca-certificates openssl && update-ca-certificates
+RUN apk add --no-cache git
+RUN apk add openssh
+
+RUN npm install sfdx-cli --global
